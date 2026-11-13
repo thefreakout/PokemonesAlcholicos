@@ -1,0 +1,37 @@
+{
+  "name": "pokecubata-hoenn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego de beber con cartas Pokémon de Hoenn. Partidas 1 contra 1 en tiempo real desde el móvil.",
+  "scripts": {
+    "dev": "tsx watch server.ts",
+    "build": "next build",
+    "start": "tsx server.ts",
+    "sprites": "node scripts/descargar-sprites.mjs",
+    "iconos": "node scripts/generar-iconos.mjs",
+    "prueba": "tsx scripts/prueba-partida.ts",
+    "prueba-motor": "tsx scripts/prueba-motor.ts"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  }
+}

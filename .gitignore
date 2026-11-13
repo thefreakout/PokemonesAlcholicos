@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Construcción de Next.js
+.next/
+out/
+
+# Sistema y editores
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Variables de entorno locales
+.env*.local
+
+# Configuración local de Claude (personal, no compartida)
+.claude/
+*.tsbuildinfo

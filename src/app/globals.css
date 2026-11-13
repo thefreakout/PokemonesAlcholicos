@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────
+   Estilos globales de PokéCubata Hoenn
+   Móvil vertical, tipografía grande y colores vivos estilo Pokémon.
+   ───────────────────────────────────────────────────────────────────── */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-gradient-to-b from-poke-azulOscuro via-poke-nocheClara to-poke-noche text-white font-juego;
+  background-attachment: fixed;
+  /* Respeta las zonas seguras del móvil (notchas, barras inferiores). */
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Botón grande principal: se juega con una sola mano */
+@layer components {
+  .btn-principal {
+    @apply w-full rounded-2xl py-4 text-lg font-extrabold uppercase tracking-wide
+           shadow-lg transition active:scale-[0.97] disabled:opacity-40
+           disabled:pointer-events-none select-none;
+  }
+  .btn-rojo {
+    @apply btn-principal bg-poke-rojo text-white shadow-poke-rojo/40;
+  }
+  .btn-amarillo {
+    @apply btn-principal bg-poke-amarillo text-poke-noche shadow-poke-amarillo/40;
+  }
+  .btn-azul {
+    @apply btn-principal bg-poke-azul text-white shadow-poke-azul/40;
+  }
+  .btn-secundario {
+    @apply rounded-xl px-4 py-2 text-sm font-bold uppercase tracking-wide
+           bg-white/10 text-white transition active:scale-95
+           disabled:opacity-40 disabled:pointer-events-none select-none;
+  }
+
+  .tarjeta-panel {
+    @apply rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10;
+  }
+
+  /* Campo de texto grande para el apodo y el código */
+  .campo-texto {
+    @apply w-full rounded-2xl bg-white/10 border-2 border-white/20 px-4 py-4
+           text-xl font-bold text-center text-white placeholder-white/40
+           outline-none focus:border-poke-amarillo;
+  }
+}
+
+/* Evita el zoom automático en iOS al enfocar campos (mínimo 16px). */
+input,
+select,
+textarea {
+  font-size: max(16px, 1em);
+}
+
+/* Scroll discreto para el registro de jugadas */
+.scroll-fino::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-fino::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+}
